@@ -17,6 +17,9 @@
                 <img src="resources/applogo.png" alt="EXIFrame Logo" class="logo-img">
                 <span>EXIFrame</span>
             </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -28,11 +31,24 @@
     <div class="blog-content">
         <h1>Photography Tips & Tutorials</h1>
         
+
+        
         <div class="blog-list">
+
+            <article class="blog-post">
+                <img src="resources/gear/chuttersnap-7ebvMMnwHjQ-unsplash.jpg" alt="Camera and Lens Buying Guide" class="blog-image">
+                <div class="blog-text">
+                    <div class="blog-meta">Feb 7, 2025 • 15 min read</div>
+                    <h2>Complete Camera and Lens Buying Guide: Choose the Right Gear</h2>
+                    <p class="blog-excerpt">Learn how to choose the perfect camera and lens for your photography needs. From DSLRs to mirrorless, understand the key features and make informed decisions.</p>
+                    <a href="blog/camera-lens-buying-guide.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
             <article class="blog-post">
                 <img src="resources/astro/ibrahim-shabil-VE7VS0C9K1k-unsplash.jpg" alt="Astrophotography Guide - Milky Way over Mountains" class="blog-image">
                 <div class="blog-text">
-                    <div class="blog-meta">March 1, 2024 • 8 min read</div>
+                    <div class="blog-meta">Jan 20, 2025 • 8 min read</div>
                     <h2>A Beginner's Guide to Astrophotography: Capturing the Night Sky</h2>
                     <p class="blog-excerpt">Discover the art of photographing celestial objects, from camera settings to post-processing techniques. Learn how to capture stunning images of stars, planets, and the Milky Way with this comprehensive guide.</p>
                     <a href="blog/astrophotography.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
@@ -42,7 +58,7 @@
             <article class="blog-post">
                 <img src="resources/street/matthew-henry-Ix1TiS-E17E-unsplash.jpg" alt="Street Photography in Action" class="blog-image">
                 <div class="blog-text">
-                    <div class="blog-meta">February 25, 2024 • 10 min read</div>
+                    <div class="blog-meta">Jan 25, 2025 • 10 min read</div>
                     <h2>The Art of Street Photography: Capturing Life in Motion</h2>
                     <p class="blog-excerpt">Learn the essentials of street photography, from camera settings to composition techniques. Discover how to capture compelling street photos and use EXIF data to improve your craft.</p>
                     <a href="blog/street-photography.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
@@ -52,12 +68,13 @@
             <article class="blog-post">
                 <img src="resources/real-estate/zac-gudakov-wwqZ8CM21gg-unsplash.jpg" alt="Modern Interior Real Estate Photography" class="blog-image">
                 <div class="blog-text">
-                    <div class="blog-meta">March 5, 2024 • 12 min read</div>
+                    <div class="blog-meta">Jan 5, 2025 • 12 min read</div>
                     <h2>Mastering Real Estate Photography: Showcase Properties Like a Pro</h2>
                     <p class="blog-excerpt">Learn professional techniques for real estate photography, from camera settings to post-processing. Discover how to make properties stand out with stunning photos that sell.</p>
                     <a href="blog/real-estate-photography.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
+
         </div>
     </div>
 
@@ -80,5 +97,24 @@
             <p>&copy; 2024 EXIFrame. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-container')) {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu-btn i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
 </body>
 </html> 

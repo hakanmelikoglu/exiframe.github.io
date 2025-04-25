@@ -17,6 +17,9 @@
                 <img src="../resources/applogo.png" alt="EXIFrame Logo" class="logo-img">
                 <span>EXIFrame</span>
             </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../blog.html">Blog</a></li>
@@ -205,5 +208,25 @@
             <p>&copy; 2025 EXIFrame. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-container')) {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu-btn i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
 </body>
 </html> 
